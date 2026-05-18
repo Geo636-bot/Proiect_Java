@@ -31,17 +31,40 @@ The central `InventoryService` supports 10 distinct business operations:
 9. **Place Order:** Complex logic that checks stock, decreases inventory, calculates totals, and records the transaction.
 10. **View User Orders:** Retrieves a history of all orders placed by a specific user.
 
-## 📁 Project Structure
+## 📁 Detailed Project Structure
+
+Below is the complete file tree of the application, mapping out all entities, repositories, and services:
 
 ```text
-src/
-└── main/
-    └── java/
-        └── ro/
-            └── store/
-                └── inventory/
-                    ├── model/           # Domain Entities (Product, Order, User, etc.)
-                    ├── config/          # JDBC Configuration
-                    ├── repository/      # CRUD Operations (Category, User, Store, Distributor)
-                    ├── service/         # Business Logic & Audit Logging
-                    └── Main.java        # Application Entry Point (Sandbox/Demo)
+store-inventory-management/
+├── src/
+│   └── main/
+│       └── java/
+│           └── ro/
+│               └── store/
+│                   └── inventory/
+│                       ├── config/
+│                       │   └── DatabaseConnection.java       # Singleton JDBC setup
+│                       ├── model/
+│                       │   ├── AbstractProduct.java          # Base abstract class
+│                       │   ├── Category.java                 # Entity
+│                       │   ├── Distributor.java              # Entity
+│                       │   ├── ElectronicsProduct.java       # Inherits AbstractProduct
+│                       │   ├── Order.java                    # Complex Entity
+│                       │   ├── PerishableProduct.java        # Inherits AbstractProduct
+│                       │   ├── Store.java                    # Entity
+│                       │   └── User.java                     # Entity
+│                       ├── repository/
+│                       │   ├── CategoryRepository.java       # JDBC CRUD Implementation
+│                       │   ├── CrudRepository.java           # Generic Interface
+│                       │   ├── DistributorRepository.java    # JDBC CRUD Implementation
+│                       │   ├── StoreRepository.java          # JDBC CRUD Implementation
+│                       │   └── UserRepository.java           # JDBC CRUD Implementation
+│                       ├── service/
+│                       │   ├── AuditService.java             # Singleton CSV Logger
+│                       │   └── InventoryService.java         # Core Business Logic Facade
+│                       └── Main.java                         # Application Entry Point
+├── database/
+│   └── init_db.sql                                           # MySQL table creation scripts
+├── audit_log.csv                                             # Auto-generated audit log
+└── README.md                                                 # Project documentation
