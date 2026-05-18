@@ -146,7 +146,8 @@ The system contains at least **8 entity classes** :
 7. **Store**
 8. **User**
 9. **Order**
-10. **OrderItem** 
+10. **OrderItem**
+
 All entities follow strict **encapsulation** : private/protected fields with public getters and setters.
 
 ---
