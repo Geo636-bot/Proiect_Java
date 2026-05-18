@@ -36,7 +36,7 @@ The central `InventoryService` supports 10 distinct business operations:
 Below is the complete file tree of the application, mapping out all entities, repositories, and services:
 
 ```text
-store-inventory-management/
+Proiect/
 ├── src/
 │   └── main/
 │       └── java/
