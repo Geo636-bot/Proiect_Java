@@ -140,7 +140,13 @@ The system contains at least **8 entity classes** :
 1. **Product** *(abstract base class)*
 2. **PerishableProduct** *(extends Product)*
 3. **ElectronicsProduct** *(extends Product)*
-4. **Category** 5. **Distributor** 6. **Address** 7. **Store** 8. **User** 9. **Order** 10. **OrderItem** 
+4. **Category**
+5. **Distributor**
+6. **Address**
+7. **Store**
+8. **User**
+9. **Order**
+10. **OrderItem** 
 All entities follow strict **encapsulation** : private/protected fields with public getters and setters.
 
 ---
